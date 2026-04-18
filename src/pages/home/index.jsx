@@ -9,11 +9,11 @@ import {
 } from "./styles";
 import { useEffect, useState } from "react";
 
-import brasilImg from "./assets/brasil 2.png";
-import dolarImg from "./assets/estados-unidos.png";
-import libraImg from "./assets/img-libra.png";
-import euroImg from "./assets/img-euro.png";
-import bitcoinImg from "./assets/img-bitt.png";
+import brasilImg from "../../assets/brasil 2.png";
+import dolarImg from "../../assets/estados-unidos.png";
+import libraImg from "../../assets/img-libra.png";
+import euroImg from "../../assets/img-euro.png";
+import bitcoinImg from "../../assets/img-bitt.png";
 
 // Mapeamento dos nomes das moedas com acentos e espaços
 const nomesMoedas = {
