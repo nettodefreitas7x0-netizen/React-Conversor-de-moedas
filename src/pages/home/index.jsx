@@ -2,6 +2,7 @@ import {
   Texto,
   ImgMoney,
   Container,
+  Wap,
   SecaoTopo,
   SecaoBaixo,
   SelectDe,
@@ -71,7 +72,7 @@ function App() {
   const [valor, setValor] = useState("");
   const [resultado, setResultado] = useState("");
 
-  // Atualiza o resultado da conversão toda vez que muda moedaDe, moedaPara ou valor
+  // Atualiza o resultado da conversão toda vez que muda a moedaDe, moedaPara ou o valor do input 
   useEffect(() => {
     if (valor === "" || isNaN(valor)) {
       setResultado("");
@@ -87,6 +88,8 @@ function App() {
 
   return (
     <Container>
+
+      <Wap> 
       <ImgMoney
         src="https://png.pngtree.com/png-vector/20241217/ourmid/pngtree-clipart-of-a-money-bag-filled-with-gold-coins-featuring-dollar-png-image_14789520.png"
         alt="Saco de dinheiro"
@@ -144,6 +147,7 @@ function App() {
           <p>{resultado === "" ? "-" : formatarMoeda(Number(resultado), moedaPara)}</p>
         </div>
       </SecaoBaixo>
+      </Wap>
     </Container>
   ); 
 }

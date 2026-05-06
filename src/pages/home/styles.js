@@ -8,17 +8,32 @@ export const Texto = styled.h1`
 // Imagem com largura fixa
 export const ImgMoney = styled.img`
   width: 200px;
+  @media (max-height:550px) {
+
+    display: none;
+    
+  }
 `;
 
 // Container principal - centraliza conteúdo vertical e horizontalmente, fundo preto e altura mínima da viewport
 export const Container = styled.div`
   display: flex;
+  background-color: #b8b8b8;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: black;
   min-height: 100vh;
 `;
+
+export const Wap = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: #313131;
+border: 5px solid green;
+border-radius: 20px;
+`
 
 // Seção do topo com layout em coluna, centralizado
 export const SecaoTopo = styled.section`
@@ -53,6 +68,9 @@ export const SecaoBaixo = styled.section`
 
   img {display: flex;
     margin: 0 auto;
+    @media (max-height:356px) {
+      display : none;
+    }
   }
 `;
 
