@@ -18,7 +18,7 @@ export const ImgMoney = styled.img`
 // Container principal - centraliza conteúdo vertical e horizontalmente, fundo preto e altura mínima da viewport
 export const Container = styled.div`
   display: flex;
-  background-color: #b8b8b8;
+  background-color: #cecece;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -30,7 +30,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-background-color: #313131;
+background-color: #1a1a1a;
 border: 5px solid green;
 border-radius: 20px;
 `
