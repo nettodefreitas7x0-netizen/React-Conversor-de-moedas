@@ -15,6 +15,9 @@ import dolarImg from "../../assets/estados-unidos.png";
 import libraImg from "../../assets/img-libra.png";
 import euroImg from "../../assets/img-euro.png";
 import bitcoinImg from "../../assets/img-bitt.png";
+import themes from "../../styles/themes";
+import styled, {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "../../styles/GlobalStyles"
 
 // Mapeamento dos nomes das moedas com acentos e espaços
 const nomesMoedas = {
@@ -42,6 +45,7 @@ const taxasCambio = {
   libra: 7.2,
   bitcoin: 9.2,
 };
+
 
 // Função para formatar valores em moeda conforme a moeda selecionada
 const formatarMoeda = (valor, moeda) => {
@@ -72,6 +76,13 @@ function App() {
   const [valor, setValor] = useState("");
   const [resultado, setResultado] = useState("");
 
+  const [theme, setTheme] = useState("light")
+ 
+  function handleChangeTheme(){
+setTheme((prevState)=> prevState === "light" ? "dark" : "light");
+
+  }
+
   // Atualiza o resultado da conversão toda vez que muda a moedaDe, moedaPara ou o valor do input 
   useEffect(() => {
     if (valor === "" || isNaN(valor)) {
@@ -85,11 +96,16 @@ function App() {
 
     setResultado(valorConvertido.toFixed(2));
   }, [moedaDe, moedaPara, valor]);
-
+ console.log({theme})
   return (
+    <ThemeProvider theme={themes[theme]}>
+ <GlobalStyles/>
+
     <Container>
 
       <Wap> 
+       <button onClick={handleChangeTheme}> mudar tema </button>
+      
       <ImgMoney
         src="https://png.pngtree.com/png-vector/20241217/ourmid/pngtree-clipart-of-a-money-bag-filled-with-gold-coins-featuring-dollar-png-image_14789520.png"
         alt="Saco de dinheiro"
@@ -149,6 +165,7 @@ function App() {
       </SecaoBaixo>
       </Wap>
     </Container>
+    </ThemeProvider>
   ); 
 }
 

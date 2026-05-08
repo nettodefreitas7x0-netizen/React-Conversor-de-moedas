@@ -18,7 +18,7 @@ export const ImgMoney = styled.img`
 // Container principal - centraliza conteúdo vertical e horizontalmente, fundo preto e altura mínima da viewport
 export const Container = styled.div`
   display: flex;
-  background-color: #cecece;
+  background-color: #3f444d ;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -30,9 +30,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-background-color: #1a1a1a;
+background-color:${({ theme })=> theme.colors.background};
+
 border: 5px solid green;
 border-radius: 20px;
+
 `
 
 // Seção do topo com layout em coluna, centralizado
@@ -47,12 +49,15 @@ export const SecaoTopo = styled.section`
     margin-bottom: 10px;
     border-radius: 20px;
     border: solid 4px green;
+    color: ${({ theme })=> theme.colors.textColor};
+    background-color: ${({ theme })=> theme.colors.background};
   }
 
   /* Estilo do input */
   input {
     border: solid 4px green;
     margin-bottom: 10px;
+
   }
 `;
 
@@ -62,7 +67,7 @@ export const SecaoBaixo = styled.section`
   p {
     display: flex;
     margin: 5px;
-    color: white;
+    color: ${({ theme })=> theme.colors.textColor};
     justify-content: center;
   }
 
